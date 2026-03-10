@@ -1,5 +1,20 @@
-# Vue 3 + Vite
+# Simple Gantt
+A simple Gantt chart application for rapid planning without the need of extensive parametrization based on Vue.
+All tasks can be positioned and re-sized via drag-and-drop.
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![Overview](assets/screen.png)
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Core Features
+- Auto-adjusting scalable time-scale
+- Drag-and-drop mechanics
+- Task progress slider
+- Add/Remove/Edit groups & tasks
+- Save and load the current state
+
+![Demo](assets/demo.mp4)
+
+## Usage
+```bash
+cd ../gantt
+npm run dev
+```
