@@ -11,7 +11,8 @@ All tasks can be positioned and re-sized via drag-and-drop.
 - Add/Remove/Edit groups & tasks
 - Save and load the current state
 
-![Demo](assets/demo.mp4)
+## Demo
+<video controls src="assets/demo.mp4"></video>   
 
 ## Usage
 ```bash
