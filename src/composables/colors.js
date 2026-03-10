@@ -1,0 +1,1 @@
+export const barColors = ["#2e6085ff", "#57a4b0ff", "#843c25", "#c0b2aeff", "#d5b992ff", "#f7b475ff"]
