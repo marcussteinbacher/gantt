@@ -5,11 +5,11 @@ All tasks can be positioned and re-sized via drag-and-drop.
 ![Overview](assets/screen.png)
 
 ## Core Features
-- Auto-adjusting scalable time-scale
-- Drag-and-drop mechanics
-- Task progress slider
 - Add/Remove/Edit groups & tasks
-- Save and load the current state
+- Auto-adjusting & re-scalable time-scale
+- Drag-and-drop & re-sizing mechanics
+- Task progress slider
+- Save and load the current state (json)
 
 ## Demo
 <video controls="controls" src="https://github.com/user-attachments/assets/8b341513-088e-4fec-a1d6-7dd550ec932b"></video>

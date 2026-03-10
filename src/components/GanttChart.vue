@@ -110,7 +110,12 @@ const onSidebarScroll = () => {
         
         <div class="chart-content" :style="{ width: `${chartWidth}px` }">
            <div v-for="group in state.groups" :key="'chart-'+group.id" class="chart-group">
-              <div class="group-row"></div>
+              <div class="group-row">
+                <div class="group-header-chart">
+                  <div class="color-indicator" :style="{ backgroundColor: group.color }"></div>
+                  <span class="group-name">{{ group.name }}</span>
+                </div>
+              </div>
               <div v-for="task in group.tasks" :key="'row-'+task.id" class="task-row">
                  <ProgressBar :task="task" :groupColor="group.color" />
               </div>
@@ -234,6 +239,30 @@ const onSidebarScroll = () => {
 .today-btn:hover {
   background-color: var(--color-today);
   color: white;
+}
+
+.group-header-chart {
+  display: none; /* Hidden by default, shown in print */
+  align-items: center;
+  padding: 0 12px;
+  height: 100%;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.color-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.group-name {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>
 

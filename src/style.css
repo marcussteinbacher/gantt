@@ -77,3 +77,73 @@ input {
 ::-webkit-scrollbar-thumb:hover {
   background: #a1a1aa;
 }
+
+/* Print styles */
+@media print {
+  /* Hide interactive elements */
+  button,
+  input,
+  .today-line,
+  .today-marker,
+  .app-header,
+  .sidebbar-content {
+    display: none !important;
+  }
+
+  /* Ensure the main content takes full page */
+  .gantt-wrapper {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .gantt-layout {
+    display: block !important;
+    height: auto !important;
+  }
+
+  /* Hide sidebar, show only timeline area */
+  .sidebar {
+    display: none !important;
+  }
+  .timeline-area {
+    display: block !important;
+    position: static !important;
+    width: auto !important;
+  }
+
+  /* Make sure colored bars, grid, and timeline are printed */
+  .progress-bar,
+  .grid-background,
+  .timeline-header {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Hide any overlays or modals */
+  .context-menu {
+    display: none !important;
+  }
+
+  /* Adjust layout for print */
+  body {
+    overflow: visible !important;
+    background-color: white !important;
+  }
+
+  .gantt-wrapper {
+    background-color: white !important;
+  }
+
+  .chart-container {
+    overflow: visible !important;
+    height: auto !important;
+    background-color: white !important;
+  }
+
+
+  /* Show group headers in chart for print */
+  .group-header-chart {
+    display: flex !important;
+  }
+
+}
