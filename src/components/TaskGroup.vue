@@ -37,7 +37,7 @@ const { openContextMenu } = useGantt();
   height: var(--row-height);
   display: flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 8px;
   position: sticky;
   top: 0;
   background-color: var(--color-group-bg);

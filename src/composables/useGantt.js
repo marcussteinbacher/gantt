@@ -225,7 +225,7 @@ export function useGantt() {
     };
 
     const exportToSVG = () => {
-        const rowHeight = 38;
+        const rowHeight = 38; // --row-height: 32px
         const timelineHeight = 36; // Height for timeline header
         const sidebarWidth = 0;//220; // Width for sidebar
 
@@ -359,7 +359,7 @@ export function useGantt() {
             svg += `<rect x="0" y="${currentY}" width="${sidebarWidth}" height="${rowHeight}" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1" />`;
             svg += `<rect x="12" y="${currentY + 14}" width="10" height="10" fill="${group.color}" rx="2" />`;
             const escapedGroupName = group.name.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-            svg += `<text x="30" y="${currentY + 26}" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#374151">${escapedGroupName}</text>`;
+            svg += `<text x="30" y="${currentY + 24}" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#374151">${escapedGroupName}</text>`;
 
             currentY += rowHeight;
 

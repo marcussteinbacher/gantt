@@ -336,8 +336,8 @@ const onPointerUp = (e) => {
 <style scoped>
 .progress-bar-container {
   position: absolute;
-  top: 5px;
-  height: 28px;
+  top: 2px;
+  height: calc(var(--row-height) - 4px); /* 28px; -- row-height: 32 */
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -383,7 +383,7 @@ const onPointerUp = (e) => {
   align-items: center;
   color: #fff;
   font-size: 0.6875rem;
-  font-weight: 500;
+  font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

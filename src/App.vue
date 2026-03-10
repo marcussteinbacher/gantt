@@ -44,8 +44,8 @@ const triggerFileInput = () => {
         <button class="text-btn" @click="triggerFileInput">Load JSON</button>
         <div class="divider"></div>
         <button class="export-btn" @click="exportToSVG">Export SVG</button>
+        <input type="date" class="date-input" v-model="startDateStr" title="Manually set the start date for SVG export." />
         <div class="divider"></div>
-        <input type="date" class="date-input" v-model="startDateStr" title="Start Date" />
         <button class="icon-btn" @click="zoomOut" title="Zoom Out">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"></circle>

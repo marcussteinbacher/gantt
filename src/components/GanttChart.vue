@@ -9,6 +9,14 @@ import { useGantt } from '../composables/useGantt';
 
 const { state, chartWidth, openContextMenu, todayLeft, todayMiddle, jumpToToday, jumpToStart, jumpToEnd, exportToSVG } = useGantt();
 
+const chartContainer = ref(null);
+const sidebarContent = ref(null);
+
+const root = document.documentElement;
+const rowHeight = parseInt(getComputedStyle(root).getPropertyValue('--row-height'));
+const sidebarWidth = parseInt(getComputedStyle(root).getPropertyValue('--sidebar-width'));
+
+console.log(rowHeight)
 
 // Compute total content height based on groups + tasks
 const contentHeight = computed(() => {
@@ -17,16 +25,13 @@ const contentHeight = computed(() => {
     rows += 1; // group header row
     rows += g.tasks.length; // task rows
   });
-  return rows * 38; // --row-height = 38px
+  return rows * rowHeight; // --row-height: 32px
 });
-
-const chartContainer = ref(null);
-const sidebarContent = ref(null);
 
 // Update viewportWidth so totalDays always covers the visible area
 const updateViewportWidth = () => {
   if (chartContainer.value) {
-    state.viewportWidth = chartContainer.value.clientWidth + 220; // include sidebar
+    state.viewportWidth = chartContainer.value.clientWidth + sidebarWidth; // include sidebar
   }
 };
 
