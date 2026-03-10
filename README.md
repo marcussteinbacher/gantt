@@ -12,7 +12,7 @@ All tasks can be positioned and re-sized via drag-and-drop.
 - Save and load the current state
 
 ## Demo
-<video controls src="assets/demo.mp4"></video>   
+<video controls="controls" src="https://github.com/user-attachments/assets/8b341513-088e-4fec-a1d6-7dd550ec932b"></video>
 
 ## Usage
 ```bash
