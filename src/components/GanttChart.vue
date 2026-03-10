@@ -7,7 +7,7 @@ import ProgressBar from './ProgressBar.vue';
 import ContextMenu from './ContextMenu.vue';
 import { useGantt } from '../composables/useGantt';
 
-const { state, chartWidth, openContextMenu, todayLeft, todayMiddle, jumpToToday, jumpToStart, jumpToEnd} = useGantt();
+const { state, chartWidth, openContextMenu, todayLeft, todayMiddle, jumpToToday, jumpToStart, jumpToEnd, exportToSVG } = useGantt();
 
 
 // Compute total content height based on groups + tasks
@@ -185,8 +185,6 @@ const onSidebarScroll = () => {
   flex-shrink: 0;
   /* Removed overflow: hidden to allow today-marker to sit on border */
 }
-
-
 
 .chart-container {
   flex: 1;

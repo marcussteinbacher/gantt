@@ -3,7 +3,7 @@ import { computed } from 'vue';
 import { useGantt } from './composables/useGantt';
 import GanttChart from './components/GanttChart.vue';
 
-const { state, zoomIn, zoomOut, saveProject, loadProject } = useGantt();
+const { state, zoomIn, zoomOut, saveProject, loadProject, exportToSVG } = useGantt();
 
 // Two-way binding for the date input (needs yyyy-MM-dd string format)
 const startDateStr = computed({
@@ -42,6 +42,8 @@ const triggerFileInput = () => {
         <input type="file" id="file-input" style="display: none" accept=".json" @change="onFileChange" />
         <button class="text-btn" @click="saveProject">Save JSON</button>
         <button class="text-btn" @click="triggerFileInput">Load JSON</button>
+        <div class="divider"></div>
+        <button class="export-btn" @click="exportToSVG">Export SVG</button>
         <div class="divider"></div>
         <input type="date" class="date-input" v-model="startDateStr" title="Start Date" />
         <button class="icon-btn" @click="zoomOut" title="Zoom Out">
@@ -171,5 +173,23 @@ const triggerFileInput = () => {
   flex: 1;
   position: relative;
   overflow: hidden;
+}
+
+.export-btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #059669;
+  padding: 4px 8px;
+  border: 1px solid #059669;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: 12px;
+  transition: all 0.2s;
+  background-color: transparent;
+}
+
+.export-btn:hover {
+  background-color: #059669;
+  color: white;
 }
 </style>
