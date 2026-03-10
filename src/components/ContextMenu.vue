@@ -33,8 +33,6 @@ const positionStyles = computed(() => ({
   top: `${adjustedPos.value.top}px`
 }));
 
-//const colors = ["#797d62","#d9ae94","#9b9b7a","#f1dca7","#d08c60","#997b66"]
-
 const handleAddGroup = () => { addGroup(); closeContextMenu(); };
 const handleAddGroupAfter = (groupId) => {insertGroupAfter(groupId); closeContextMenu(); };
 const handleRemoveGroup = () => { removeGroup(contextMenu.targetId); closeContextMenu(); };
@@ -56,6 +54,11 @@ onUnmounted(() => window.removeEventListener('click', onClickOutside));
 // Re-clamp position every time the menu opens
 watch(isVisible, (visible) => {
   if (visible) updatePosition();
+});
+
+// Also update position when mouse coordinates change (for consecutive right-clicks)
+watch([() => contextMenu.x, () => contextMenu.y], () => {
+  if (isVisible.value) updatePosition();
 });
 </script>
 
